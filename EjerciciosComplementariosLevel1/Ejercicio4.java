@@ -9,7 +9,7 @@ public class Ejercicio4 {
         System.out.println("Ingrese un numero entero");
         num = scan.nextInt();
         for (int i = 1; i <= num; i++) {
-            res = res * i;
+            res *= i;
         }
         System.out.println("El factorial de " + num + " es: " + res);
     }
