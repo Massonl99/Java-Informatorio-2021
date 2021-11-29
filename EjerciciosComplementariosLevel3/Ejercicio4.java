@@ -1,14 +1,18 @@
 package EjerciciosComplementariosLevel3;
 
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        Stream<Integer> lista = crearLista().stream().distinct();
-        lista.mapToInt(a -> factorial(a)).forEach(System.out::println);;
+        List<Integer> lista = crearLista();
+        List<Integer> listaFinal = lista.stream()
+                                        .distinct()
+                                        .map(a -> a = factorial(a))
+                                        .collect(Collectors.toList());
+        System.out.println(listaFinal);
     }
-    public static int factorial(int a) {
+    public static Integer factorial(int a) {
         int res = 1;
         for (int i=1 ; i<=a ; i++){
             res = res * i;
